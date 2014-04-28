@@ -1,9 +1,10 @@
+SAUCE_FILE = "sauce-config.json"
 try
-  sauce_config = require('./.sauce-config.json')
+  sauce_config = require("./#{SAUCE_FILE}")
 catch e
-  throw new Error ".sauce-config.json does not exist. Please create it and add your sauce credentials"
+  throw new Error "#{SAUCE_FILE} does not exist. Please create it and add your sauce credentials"
 
-karma_shared = require('./karma-shared.conf')
+karma_shared = require("./karma-shared.conf")
 
 console.log sauce_config
 
@@ -22,24 +23,24 @@ module.exports = (config) ->
 
     customLaunchers:
       sl_ie_8:
-        base: 'SauceLabs'
-        browserName: 'internet explorer'
-        platform: 'windows 7'
-        version: '8'
+        base: "SauceLabs"
+        browserName: "internet explorer"
+        platform: "windows 7"
+        version: "8"
       sl_ie_9:
-        base: 'SauceLabs'
-        browserName: 'internet explorer'
-        platform: 'windows 7'
-        version: '9'
+        base: "SauceLabs"
+        browserName: "internet explorer"
+        platform: "windows 7"
+        version: "9"
 
     browsers: ["sl_ie_8", "sl_ie_9"]
 
     plugins: [
-      'karma-sauce-launcher',
-      'karma-html2js-preprocessor',
-      'karma-mocha',
-      'karma-expect',
-      'karma-phantomjs-launcher'
+      "karma-sauce-launcher",
+      "karma-html2js-preprocessor",
+      "karma-mocha",
+      "karma-expect",
+      "karma-phantomjs-launcher"
     ]
 
     singleRun: true
