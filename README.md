@@ -41,3 +41,20 @@ _.pluckDeep(data, 'target');
 
 # Testing
 
+Run client and server specs
+```bash
+$ gulp test
+```
+
+Run client specs on Sauce Labs (requires sauce account credentials be added to ``sauce-config.json``)
+
+```bash
+$ gulp test:client:sauce
+```
+
+Continuously client tests during development
+
+```bash
+$ gulp
+```
+

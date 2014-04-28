@@ -33,5 +33,5 @@ gulp.task('test:server', function() {
     });
 });
 
-gulp.task('test:all', ['test:client', 'test:server']);
+gulp.task('test', ['test:client', 'test:server']);
 gulp.task('default', clientTest.bind({'action': 'watch'}));
