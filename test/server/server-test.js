@@ -5,7 +5,6 @@ var regular = require('../fixtures/regular-object');
 var pluckDeep = require('../../pluck-deep');
 
 describe('pluckDeep', function () {
-  console.log(pluckDeep);
   it('properly deals with a single json object', function () {
     var results = pluckDeep(nested, 'sub_section_items');
     expect(results).to.have.length(3);
