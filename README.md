@@ -1,17 +1,23 @@
 Pluck Deep
 ---
 
-``pluckDeep(<haystack>, <needle>);``
-The javascript function you (maybe never) wish you had. Returns the value of all keys in haystack, that match needle.
+Returns an array containing the values of all keys in haystack that match needle.
 
+Usage:
+
+``pluckDeep(<haystack>, <needle>);``
+
+# Examples
 
 ``` javascript
+// A ``<script>`` consumable build provided in ``./dist``.
+var pluckDeep = require('pluck-deep');
 var data = {
   foo: {
     bar: {
       'biz': 1
      }
-  }
+  },
   bar:{
     baz: {
       'biz': 2
@@ -21,23 +27,8 @@ var data = {
 
 pluckDeep(data, 'biz')
 => [1, 2]
-
-// functional programming is cool, right?
-pluckDeep(data, 'biz')
-  .reduce(function(a, x){ return a + x });
-=> 3
 ```
 
-As a lodash mixin:
-
-``` javascript
-// node
-var pluckDeep = require('pluck-deep');
-
-_.mixin({pluckDeep: pluckDeep});
-
-_.pluckDeep(data, 'target');
-```
 
 # Testing
 
@@ -46,13 +37,25 @@ Run client and server specs
 $ gulp test
 ```
 
+Run client specs in Safari, Chrome, and Firefox
+
+```bash
+$ gulp test:client:all
+```
+
 Run client specs on Sauce Labs (requires sauce account credentials be added to ``sauce-config.json``)
 
 ```bash
 $ gulp test:client:sauce
 ```
 
-Continuously client tests during development
+Run server specs
+
+```bash
+$ gulp test:server
+```
+
+Continuously client tests (via PhantomJS) during development
 
 ```bash
 $ gulp
