@@ -31,6 +31,7 @@ function clientTest() {
 
 gulp.task('test:client', clientTest);
 gulp.task('test:client:sauce', clientTest.bind({configFile: './karma-sauce.coffee'}));
+gulp.task('test:client:all', clientTest.bind({configFile: './karma-local-all.coffee'}));
 gulp.task('test:server', function() {
   return gulp.src('test/*-test.js')
     .pipe(mocha())

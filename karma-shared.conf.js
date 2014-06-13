@@ -12,7 +12,7 @@ module.exports = function(config) {
     autowatch: true,
     port: 9876,
     colors: true,
-    logLevel: config.LOG_DEBUG,
+    logLevel: config.LOG_INFO,
     captureTimeout: 60000,
   });
 };
