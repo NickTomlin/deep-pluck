@@ -32,6 +32,7 @@
     "gulp-browserify": "^0.5.0",
     "gulp-uglify": "^0.3.0",
     "gulp-rename": "^1.2.0",
-    "karma-safari-launcher": "^0.1.1"
+    "karma-safari-launcher": "^0.1.1",
+    "benchmark": "^1.0.0"
   }
 }
