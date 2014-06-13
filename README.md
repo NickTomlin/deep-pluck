@@ -35,8 +35,9 @@ deepPluck(data, 'biz')
 # Testing
 
 Run client and server specs
+
 ```bash
-$ gulp test
+$ npm test
 ```
 
 Run client specs in Safari, Chrome, and Firefox
