@@ -2,7 +2,7 @@ var _ = require('lodash');
 var deepPluck = require('../deep-pluck');
 var benchmark = require('benchmark');
 // 460k of government data. Woo Hoo. https://www.healthcare.gov/api/glossary.json
-var bigObj = require('./fixtures/glossary.json');
+var bigObj = require('./data/glossary.json');
 var suite = new benchmark.Suite();
 
 function langFilter (lang){
