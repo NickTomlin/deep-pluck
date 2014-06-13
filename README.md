@@ -1,13 +1,15 @@
 Pluck Deep
 ---
 
-Returns an array containing the values of all keys in haystack that match needle.
-
-Usage:
-
 ``pluckDeep(<haystack>, <needle>);``
 
-# Examples
+Returns an array containing the values of all keys in haystack that match needle.
+
+# Installation
+
+``npm i pluckdeep``
+
+# Example
 
 ``` javascript
 // A ``<script>`` consumable build provided in ``./dist``.
@@ -61,3 +63,9 @@ Continuously client tests (via PhantomJS) during development
 $ gulp
 ```
 
+# Browser Support
+
+Chrome
+Firefox
+Safari
+ie8+
