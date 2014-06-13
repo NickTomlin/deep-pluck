@@ -1,4 +1,4 @@
-Pluck Deep
+Deep Pluck
 ---
 
 ``deepPluck(<haystack>, <needle>);``
