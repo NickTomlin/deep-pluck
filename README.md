@@ -7,7 +7,7 @@ Returns an array containing the values of all keys in haystack that match needle
 
 # Installation
 
-``npm i pluckdeep``
+``npm i deep-pluck``
 
 # Example
 
