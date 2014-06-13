@@ -14,7 +14,7 @@ function clientTest() {
     watch: 'run'
   });
 
-  return gulp.src('test/client/*-test')
+  return gulp.src('test/*-test.js')
     .pipe(karma(config))
     .on('error', function(err) {
       // Make sure failed tests cause gulp to exit non-zero
@@ -25,7 +25,7 @@ function clientTest() {
 gulp.task('test:client', clientTest);
 gulp.task('test:client:sauce', clientTest.bind({configFile: './karma-sauce.coffee'}));
 gulp.task('test:server', function() {
-  return gulp.src('test/server/*-test.js')
+  return gulp.src('test/*-test.js')
     .pipe(mocha())
     .on('error', function(err) {
       // Make sure failed tests cause gulp to exit non-zero

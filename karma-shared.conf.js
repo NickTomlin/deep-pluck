@@ -3,7 +3,7 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['mocha', 'expect'],
     // i'm not sure if this is going to get overwritten or merged
-    files: ['pluck-deep.js','test/client/*','test/fixtures/*'],
+    files: ['pluck-deep.js','test/*-test.js','test/fixtures/*'],
     preprocessors: {
       '**/*.json': 'html2js'
     },

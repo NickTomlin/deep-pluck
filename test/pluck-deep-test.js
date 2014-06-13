@@ -1,8 +1,8 @@
-var expect = require('chai').expect;
-var nested = require('../fixtures/nested.json');
-var multipleLevels = require('../fixtures/multiple-levels.json');
-var regular = require('../fixtures/regular-object');
-var pluckDeep = require('../../pluck-deep');
+var expect = require('expect.js');
+var nested = require('./fixtures/nested.json');
+var multipleLevels = require('./fixtures/multiple-levels.json');
+var regular = require('./fixtures/regular-object');
+var pluckDeep = require('../pluck-deep');
 
 describe('pluckDeep', function () {
   it('properly deals with a single json object', function () {
