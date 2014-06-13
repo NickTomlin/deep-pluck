@@ -1,5 +1,5 @@
 var _ = require('lodash');
-var pluckDeep = require('../pluck-deep');
+var deepPluck = require('../deep-pluck');
 var benchmark = require('benchmark');
 // 460k of government data. Woo Hoo. https://www.healthcare.gov/api/glossary.json
 var bigObj = require('./fixtures/glossary.json');
@@ -11,7 +11,7 @@ function langFilter (lang){
 
 // SPOILER: PluckDeep is a lot slower.
 suite.add('Pluck deep', function () {
-  var articlesInSpanish = pluckDeep(bigObj, 'lang')
+  var articlesInSpanish = deepPluck(bigObj, 'lang')
   .filter(langFilter)
   .length;
 })

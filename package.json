@@ -1,9 +1,9 @@
 {
-  "name": "pluck-deep",
+  "name": "deep-pluck",
   "version": "0.0.1",
   "private": true,
   "description": "Recursively grab the values of all keys within a deeply nested object",
-  "main": "pluck-deep.js",
+  "main": "deep-pluck.js",
   "scripts": {
     "test": "gulp test"
   },

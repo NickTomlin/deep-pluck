@@ -7,8 +7,8 @@ var rename = require('gulp-rename');
 var jshint = require('gulp-jshint');
 var karma = require('gulp-karma');
 
-var MAIN_FILE = 'pluck-deep.js';
-var MODULE_NAME = 'pluckDeep';
+var MAIN_FILE = 'deep-pluck.js';
+var MODULE_NAME = 'deepPluck';
 
 function clientTest() {
   // Invoking with func.bind sets context to a config object.
@@ -63,5 +63,5 @@ gulp.task('uglify', ['browserify'], function () {
 
 gulp.task('build', ['jshint', 'browserify', 'uglify']);
 
-gulp.task('test', ['test:client', 'test:server']);
+gulp.task('test', ['test:client:all', 'test:server']);
 gulp.task('default', clientTest.bind({'action': 'watch'}));

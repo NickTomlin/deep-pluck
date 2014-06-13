@@ -12,7 +12,7 @@ module.exports = (config) ->
   # do we want to reverse these?
   karma_shared config,
     testName: "pluck deep sauce"
-    logFile: "pluck-deep-sauce.log"
+    logFile: "deep-pluck-sauce.log"
 
   config.set
     plugins: [

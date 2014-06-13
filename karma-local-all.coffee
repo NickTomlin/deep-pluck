@@ -5,7 +5,7 @@ karma_shared = require("./karma-shared.conf")
 module.exports = (config) ->
   karma_shared config,
     testName: "pluck deep client"
-    logFile: "pluck-deep-client.log"
+    logFile: "deep-pluck-client.log"
 
   config.set
     browsers: ["Firefox", "Chrome", "Safari"]

@@ -1,7 +1,7 @@
 Pluck Deep
 ---
 
-``pluckDeep(<haystack>, <needle>);``
+``deepPluck(<haystack>, <needle>);``
 
 Returns an array containing the values of all keys in haystack that match needle.
 
@@ -13,7 +13,7 @@ Returns an array containing the values of all keys in haystack that match needle
 
 ``` javascript
 // A ``<script>`` consumable build provided in ``./dist``.
-var pluckDeep = require('pluck-deep');
+var deepPluck = require('deep-pluck');
 var data = {
   foo: {
     bar: {
@@ -27,7 +27,7 @@ var data = {
   }
 }
 
-pluckDeep(data, 'biz')
+deepPluck(data, 'biz')
 => [1, 2]
 ```
 

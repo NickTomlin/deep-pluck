@@ -1,9 +1,9 @@
-var isObject = pluckDeep._isObject = function(target) {
+var isObject = deepPluck._isObject = function(target) {
   var t = typeof target;
   return (t === 'function' || t === 'object') || false;
 };
 
-function pluckDeep (source, target, results) {
+function deepPluck (source, target, results) {
   results = results || [];
 
   if (!source) return results;
@@ -14,11 +14,11 @@ function pluckDeep (source, target, results) {
 
   if (isObject(source)) {
     for (var prop in source) {
-      pluckDeep(source[prop], target, results);
+      deepPluck(source[prop], target, results);
     }
   }
 
   return results;
 }
 
-module.exports = pluckDeep;
+module.exports = deepPluck;
