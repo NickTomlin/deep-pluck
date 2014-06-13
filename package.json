@@ -1,6 +1,6 @@
 {
   "name": "deep-pluck",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Recursively grab the values of all keys within a deeply nested object",
   "main": "deep-pluck.js",
   "scripts": {
