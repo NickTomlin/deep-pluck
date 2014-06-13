@@ -6,6 +6,8 @@ var isObject = pluckDeep._isObject = function(target) {
 function pluckDeep (source, target, results) {
   results = results || [];
 
+  if (!source) return results;
+
   if (source[target]) {
     results.push(source[target]);
   }

@@ -30,4 +30,31 @@ describe('pluckDeep', function () {
     expect(pluckDeep(2, 'target')).to.have.length(0);
     expect(pluckDeep(NaN, 'target')).to.have.length(0);
   });
+
+  it('returns an empty array if passed null/undefined/odd object', function () {
+    expect(pluckDeep(null)).to.have.length(0);
+    expect(pluckDeep(undefined)).to.have.length(0);
+    expect(pluckDeep(false)).to.have.length(0);
+    expect(pluckDeep(true)).to.have.length(0);
+    expect(pluckDeep(parseInt('Break'))).to.have.length(0);
+  });
+
+  describe('_isObject', function () {
+    it('identifies plain objects', function () {
+      expect(pluckDeep._isObject({})).to.be.true;
+    });
+
+    it('identifies arrays', function () {
+      expect(pluckDeep._isObject([])).to.be.true;
+    });
+
+    it('does not identify strings', function () {
+      expect(pluckDeep._isObject('string')).to.be.false;
+    });
+
+    it('does not identify functions', function () {
+      var anon = function anon (){};
+      expect(pluckDeep._isObject(anon)).to.be.false
+    });
+  });
 });
