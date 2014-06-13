@@ -1,4 +1,4 @@
-var expect = require('expect.js');
+var assert = require('assert');
 var nested = require('./fixtures/nested.json');
 var multipleLevels = require('./fixtures/multiple-levels.json');
 var regular = require('./fixtures/regular-object');
@@ -7,12 +7,12 @@ var pluckDeep = require('../pluck-deep');
 describe('pluckDeep', function () {
   it('properly deals with a single json object', function () {
     var results = pluckDeep(nested, 'sub_section_items');
-    expect(results).to.have.length(3);
+    assert.equal(results.length, 3);
   });
 
   it('handles targets at multiple levels of an object', function () {
     var results = pluckDeep(multipleLevels, 'target');
-    expect(results).to.have.length(3);
+    assert.equal(results.length, 3);
   });
 
   it('returns an empty array when nothing is found', function () {
@@ -22,39 +22,38 @@ describe('pluckDeep', function () {
         'biz':'boz'
       }
     }, 'doesnotexist');
-    expect(results).to.have.length(0);
+    assert.equal(results.length, 0);
   });
 
-  it('returns an empty array when passed a non object or array', function () {
-    expect(pluckDeep('foo', 'target')).to.have.length(0);
-    expect(pluckDeep(2, 'target')).to.have.length(0);
-    expect(pluckDeep(NaN, 'target')).to.have.length(0);
+  it('returns an empty array when passed a non iterable object', function () {
+    assert.equal(pluckDeep('foo', 'target').length, 0);
+    assert.equal(pluckDeep(2, 'target').length, 0);
   });
 
   it('returns an empty array if passed null/undefined/odd object', function () {
-    expect(pluckDeep(null)).to.have.length(0);
-    expect(pluckDeep(undefined)).to.have.length(0);
-    expect(pluckDeep(false)).to.have.length(0);
-    expect(pluckDeep(true)).to.have.length(0);
-    expect(pluckDeep(parseInt('Break'))).to.have.length(0);
+    assert.equal(pluckDeep(null).length, 0);
+    assert.equal(pluckDeep(undefined).length, 0);
+    assert.equal(pluckDeep(false).length, 0);
+    assert.equal(pluckDeep(true).length, 0);
+    assert.equal(pluckDeep(parseInt('Break')).length, 0);
   });
 
   describe('_isObject', function () {
     it('identifies plain objects', function () {
-      expect(pluckDeep._isObject({})).to.be.true;
+      assert(pluckDeep._isObject({}));
     });
 
     it('identifies arrays', function () {
-      expect(pluckDeep._isObject([])).to.be.true;
+      assert(pluckDeep._isObject([]));
+    });
+
+    it('identifies functions', function () {
+      var anon = function anon(){};
+      assert(pluckDeep._isObject(anon));
     });
 
     it('does not identify strings', function () {
-      expect(pluckDeep._isObject('string')).to.be.false;
-    });
-
-    it('does not identify functions', function () {
-      var anon = function anon (){};
-      expect(pluckDeep._isObject(anon)).to.be.false
+      assert.equal(pluckDeep._isObject('string'), false);
     });
   });
 });
