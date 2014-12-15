@@ -1,6 +1,8 @@
 Deep Pluck
 ---
 
+[![Build Status](http://img.shields.io/travis/nicktomlin/deep-pluck.svg?style=flat)](https://travis-ci.org/nicktomlin/deep-pluck)
+
 ``deepPluck(<haystack>, <needle>);``
 
 Returns an array containing the values of all keys in haystack that match needle.
