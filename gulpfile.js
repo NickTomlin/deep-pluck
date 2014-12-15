@@ -63,5 +63,6 @@ gulp.task('uglify', ['browserify'], function () {
 
 gulp.task('build', ['jshint', 'browserify', 'uglify']);
 gulp.task('test', ['jshint', 'test:client:all', 'test:server']);
+gulp.task('test:ci', ['jshint', 'test:client', 'test:server']); // todo: sauce
 
 gulp.task('default', clientTest.bind({'action': 'watch'}));

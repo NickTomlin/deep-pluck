@@ -4,7 +4,8 @@
   "description": "Recursively grab the values of all keys within a deeply nested object",
   "main": "deep-pluck.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test:ci",
+    "test:full": "gulp test"
   },
   "author": "Nick Tomlin",
   "license": "ISC",
