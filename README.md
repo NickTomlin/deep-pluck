@@ -1,7 +1,7 @@
 Deep Pluck
 ---
 
-[![Build Status](http://img.shields.io/travis/nicktomlin/deep-pluck.svg?style=flat)](https://travis-ci.org/nicktomlin/deep-pluck)
+[![Build Status](http://img.shields.io/travis/NickTomlin/deep-pluck.svg?style=flat)](https://travis-ci.org/NickTomlin/deep-pluck)
 
 ``deepPluck(<haystack>, <needle>);``
 
